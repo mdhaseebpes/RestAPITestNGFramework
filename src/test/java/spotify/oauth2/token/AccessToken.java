@@ -41,7 +41,7 @@ public class AccessToken {
         formParams.put("client_secret","90b1cf13de3c48bf86700b3889711d3c");
 
       Response response = given().log().all().
-                baseUri("https://accounts.spotify.com")
+                baseUri(System.getProperty("BASE_URI"))
                 .contentType(ContentType.URLENC)
                 .formParams(formParams)
       .when().post(API+TOKEN)
